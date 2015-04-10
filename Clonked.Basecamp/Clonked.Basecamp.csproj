@@ -1,0 +1,133 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{6F869BF1-7FAD-4F95-92D8-08D58E679DAC}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Clonked.Basecamp</RootNamespace>
+    <AssemblyName>Clonked.Basecamp</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.5.0.6\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ApiJsonConverter.cs" />
+    <Compile Include="Attachment.cs" />
+    <Compile Include="AttachmentToken.cs" />
+    <Compile Include="BasicAuthenticationCredentials.cs" />
+    <Compile Include="CachePackage.cs" />
+    <Compile Include="Collections\CalendarEventCollection.cs" />
+    <Compile Include="CreateRequests\CalendarEventCreateRequest.cs" />
+    <Compile Include="CalendarEvent.cs" />
+    <Compile Include="CreateRequests\CommentCreateRequest.cs" />
+    <Compile Include="DictionaryResponseCache.cs" />
+    <Compile Include="Document.cs" />
+    <Compile Include="CreateRequests\DocumentCreateRequest.cs" />
+    <Compile Include="DocumentStub.cs" />
+    <Compile Include="IAuthenticationCredentials.cs" />
+    <Compile Include="ICachePackage.cs" />
+    <Compile Include="IMimeTypeResolver.cs" />
+    <Compile Include="IResponseCache.cs" />
+    <Compile Include="Managers\AccessManager.cs" />
+    <Compile Include="Api.cs" />
+    <Compile Include="ApiObject.cs" />
+    <Compile Include="BasecampRequest.cs" />
+    <Compile Include="BasecampResponse.cs" />
+    <Compile Include="Calendar.cs" />
+    <Compile Include="CalendarEventStub.cs" />
+    <Compile Include="Managers\AttachmentManager.cs" />
+    <Compile Include="Managers\CalendarManager.cs" />
+    <Compile Include="CalendarStub.cs" />
+    <Compile Include="Comment.cs" />
+    <Compile Include="Event.cs" />
+    <Compile Include="Managers\CommentManager.cs" />
+    <Compile Include="Managers\DocumentManager.cs" />
+    <Compile Include="Managers\EventManager.cs" />
+    <Compile Include="HttpRequestMethod.cs" />
+    <Compile Include="Managers\ManagerBase.cs" />
+    <Compile Include="Managers\MessageManager.cs" />
+    <Compile Include="Managers\TopicManager.cs" />
+    <Compile Include="Managers\UploadManager.cs" />
+    <Compile Include="Message.cs" />
+    <Compile Include="CreateRequests\MessageCreateRequest.cs" />
+    <Compile Include="Managers\ModelCopier.cs" />
+    <Compile Include="Managers\PeopleManager.cs" />
+    <Compile Include="MimeTypeResolver.cs" />
+    <Compile Include="Person.cs" />
+    <Compile Include="Project.cs" />
+    <Compile Include="Collections\ProjectCalendarEventCollection.cs" />
+    <Compile Include="CreateRequests\ProjectCreateRequest.cs" />
+    <Compile Include="Managers\ProjectManager.cs" />
+    <Compile Include="ItemMeta.cs" />
+    <Compile Include="ProjectStub.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="PersonStub.cs" />
+    <Compile Include="StringExtensions.cs" />
+    <Compile Include="ToDoList.cs" />
+    <Compile Include="ToDoListStub.cs" />
+    <Compile Include="Collections\ToDoListItemCollection.cs" />
+    <Compile Include="CreateRequests\ToDoListCreateRequest.cs" />
+    <Compile Include="ToDoListForPerson.cs" />
+    <Compile Include="ToDoListItemStub.cs" />
+    <Compile Include="CreateRequests\ToDoListItemCreateRequest.cs" />
+    <Compile Include="ToDoListItem.cs" />
+    <Compile Include="Managers\ToDoListManager.cs" />
+    <Compile Include="Topic.cs" />
+    <Compile Include="TypeMeta.cs" />
+    <Compile Include="Upload.cs" />
+    <Compile Include="CreateRequests\UploadCreateRequest.cs" />
+    <Compile Include="HttpContextResponseCache.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
